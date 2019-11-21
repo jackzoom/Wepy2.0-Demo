@@ -1,0 +1,25 @@
+/**
+ * @Name：主页
+ * @Path：/pages/index/index
+ * @Create: 2019-11-21
+ * @Author: jackzoom
+ */
+<style lang="less">
+
+</style>
+<template>
+    <view class="container">
+        主页</view>
+</template>
+
+<script>
+    import wepy from '@wepy/core';
+    import store from '@/store';
+    import pubMixin from '@/mixins';
+    wepy.page({
+        mixins: [pubMixin],
+        data: {
+            userData: ''
+        }
+    });
+</script>

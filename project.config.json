@@ -1,0 +1,16 @@
+{
+	"description": "zhuanyouyou_b",
+	"setting": {
+		"urlCheck": true,
+		"es6": false,
+		"postcss": true,
+		"minified": false
+	},
+	"compileType": "miniprogram",
+	"appid": "wx9f9e25b68ad1c5be",
+	"projectname": "wepy_zhuanyouyou_b",
+	"miniprogramRoot": "weapp",
+	"simulatorType": "wechat",
+	"simulatorPluginLibVersion": {},
+	"condition": {}
+}
