@@ -1,0 +1,4 @@
+
+<view class="container">
+    <button data-wpy-evt="15-0" bindtap="_proxy">支付</button>
+</view>

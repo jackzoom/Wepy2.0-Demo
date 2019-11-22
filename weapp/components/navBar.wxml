@@ -1,0 +1,4 @@
+
+<view style="height:{{sysInfo.navBarExtendHeight+sysInfo.navBarHeight}}px" class="navbar-box">
+    <view style="padding-top:{{sysInfo.statusBarHeight}}px;line-height:{{sysInfo.navBarHeight-sysInfo.statusBarHeight}}px" class="navbar-fixed">标题信息</view>
+</view>

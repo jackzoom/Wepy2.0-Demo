@@ -1,0 +1,22 @@
+<style lang="less">
+
+</style>
+<template>
+    <view>
+        {{staticUpdate}}
+        <view>组件语言：{{$i18n.lang}}</view>
+    </view>
+
+</template>
+<script>
+    import wepy from '@wepy/core';
+    import store from '@/store';
+    import {
+        mapState
+    } from '@wepy/x';
+    wepy.component({
+        store,
+        computed: mapState(['staticUpdate','$i18n'])
+    });
+</script>
+

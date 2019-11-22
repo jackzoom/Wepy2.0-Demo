@@ -1,4 +1,7 @@
 {
+    "navigationBarTitleText": "Infun",
     "component": true,
-    "usingComponents": {}
+    "usingComponents": {
+        "child": "../../components/child"
+    }
 }

@@ -1,0 +1,37 @@
+
+/**
+ * @file:Webview 页面
+ * @desc:
+ * @author:jackzoom
+ * @date:2019-07-05
+ * @params:
+ *          url ->跳转网址
+ *          redirect ->跳转回调
+ */
+
+<style lang="less">
+
+</style>
+<template>
+    <view>
+        <web-view src="{{url}}"></web-view>
+    </view>
+</template>
+
+<script>
+    import wepy from '@wepy/core'
+    import utils from '@/utils/index'
+    wepy.page({
+        data: {
+            url: ''
+        },
+        onLoad(options) {
+            let defaults = {
+                url: '',
+                redirect: ''
+            }
+            var params = utils.extend(defaults, options);
+            this.url = decodeURIComponent(params.url) + (params.redirect ? "?redirect=" + params.redirect : '') 
+        }
+    })
+</script>

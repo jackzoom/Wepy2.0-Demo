@@ -1,0 +1,6 @@
+
+<view>
+    {{staticUpdate}}
+    <view>组件语言：{{$i18n.lang}}</view>
+</view>
+

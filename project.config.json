@@ -9,8 +9,39 @@
 	"compileType": "miniprogram",
 	"appid": "wx9f9e25b68ad1c5be",
 	"projectname": "wepy_zhuanyouyou_b",
-	"miniprogramRoot": "weapp",
+	"miniprogramRoot": "weapp/",
 	"simulatorType": "wechat",
 	"simulatorPluginLibVersion": {},
-	"condition": {}
+	"condition": {
+		"search": {
+			"current": -1,
+			"list": []
+		},
+		"conversation": {
+			"current": -1,
+			"list": []
+		},
+		"plugin": {
+			"current": -1,
+			"list": []
+		},
+		"game": {
+			"list": []
+		},
+		"gamePlugin": {
+			"current": -1,
+			"list": []
+		},
+		"miniprogram": {
+			"current": -1,
+			"list": [
+				{
+					"id": -1,
+					"name": "ApiTest",
+					"pathName": "pages/spa/apiTest",
+					"scene": null
+				}
+			]
+		}
+	}
 }

@@ -1,0 +1,10 @@
+.navbar-box {
+  position: relative;
+  width: 100%;
+  background: red;
+  color: #fff;
+}
+.navbar-fixed {
+  text-align: center;
+}
+

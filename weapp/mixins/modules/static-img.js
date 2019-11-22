@@ -11,6 +11,7 @@ exports["default"] = void 0;
 var _default = {
   data: {
     staticTime: Math.random() * 100000
-  }
+  },
+  created: function created() {}
 };
 exports["default"] = _default;

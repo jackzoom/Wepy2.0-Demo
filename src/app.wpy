@@ -1,53 +1,64 @@
 <style lang="less">
-.container {
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-between;
-  box-sizing: border-box;
-}
+  .container {
+    height: 100%;  
+    box-sizing: border-box;
+  }
+  .title {
+    margin-bottom: 40rpx;
+  }
 </style>
 
 <script>
-import wepy from '@wepy/core';
-import eventHub from './common/eventHub';
-import vuex from '@wepy/x';
-import promisify from '@wepy/use-promisify'
-
-wepy.use(vuex);
-wepy.use(promisify);
-wepy.app({
-  /**
-   * 全局参数
-   * 
-   */
-  globalData: {
-    userId: 0, //用户编号
-    userInfo: null
-  },
-  onLaunch() {   
-    eventHub.$on('app-launch', (...args) => {
-      console.log('app-launch event emitted, the params are:');
-      console.log(args);
-    });
-  },
-
-  methods: {
-    
-  }
-});
+  import wepy from '@wepy/core';
+  import eventHub from './common/eventHub';
+  import vuex from '@wepy/x';
+  import promisify from '@wepy/use-promisify';
+  import pubMixins from '@/mixins';
+  import {
+    intercepe
+  } from './utils/intercepe';
+  wepy.use(vuex);
+  wepy.use(promisify);
+  wepy.mixin(pubMixins);
+  //配置国际化
+  import T from '@/common/lang';
+  T.setLocaleByIndex(wx.getStorageSync('system-lang') || 'zh-cn');
+  wepy.$i18n = T.locale;
+  wepy.app({
+    constructor() {
+      intercept(wepy);
+    },
+    /**
+     * 全局参数
+     *
+     */
+    globalData: {
+      userId: 0, //用户编号
+      userInfo: null
+    },
+    onLaunch() {
+      eventHub.$on('app-launch', (...args) => {
+        console.log('app-launch event emitted, the params are:');
+        console.log(args);
+      });
+    },
+    methods: {}
+  });
 </script>
+
 <config>
 {
-    pages: [
-      'pages/index/index'
+    "pages": [
+      "pages/login/index",
+      "pages/index/index",
+      "pages/spa/webview",
+      "pages/spa/apiTest"
     ],
-    window: {
-      backgroundTextStyle: 'light',
-      navigationBarBackgroundColor: '#fff',
-      navigationBarTitleText: 'WeChat',
-      navigationBarTextStyle: 'black'
-    }
+    "window": {
+      "backgroundTextStyle": "light",
+      "navigationBarBackgroundColor": "#fff",
+      "navigationBarTitleText": "WeChat",
+      "navigationBarTextStyle": "black"  
+    } 
 }
 </config>

@@ -1,3 +1,13 @@
 
-<view class="container">
-    主页</view>
+<view class="container">        
+    <view class="title">页面标题：{{$i18n.index.barTitle}}</view>
+    <view style="border:1px solid #ddd;padding:15rpx;margin:20rpx;">时间戳：{{staticUpdate}}</view>
+    <view class="child">
+        <view class="content">组件时间戳：</view>
+        <button data-wpy-evt="13-16" bindtap="_proxy">手动更新</button>
+        <child bind_init="_initComponent"></child>
+    </view>
+    <view class="lang">
+        <button data-wpy-evt="13-17" bindtap="_proxy">切换语言</button>
+    </view>
+</view>

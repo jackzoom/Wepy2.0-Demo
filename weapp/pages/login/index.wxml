@@ -1,0 +1,12 @@
+
+<view class="container">      
+    <view class="title">页面标题：{{$i18n.index.barTitle}}</view>
+    <view class="login-main">
+        <view class="login-header">当前语言：{{$i18n.lang}}</view>
+        <view class="login-body"></view>
+        <view class="login-footer">
+            <button data-wpy-evt="12-10" bindtap="_proxy">{{$i18n.app.changeLang}}</button>
+            <button data-wpy-evt="12-11" bindtap="_proxy">{{$i18n.login.buttonLogin}}</button>              
+        </view>
+    </view>
+</view>

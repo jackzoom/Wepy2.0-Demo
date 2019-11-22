@@ -1,0 +1,62 @@
+/**
+ * @Name：登录
+ * @Path：/pages/login/index
+ * @Create: 2019-11-22
+ * @Author: jackzoom
+ */
+<style lang="less">
+
+</style>
+<template>
+    <view class="container">      
+        <view class="title">页面标题：{{$i18n.index.barTitle}}</view>
+        <view class="login-main">
+            <view class="login-header">当前语言：{{$i18n.lang}}</view>
+            <view class="login-body"></view>
+            <view class="login-footer">
+                <button @tap="onChangeLang">{{$i18n.app.changeLang}}</button>
+                <button @tap="onLoginTap">{{$i18n.login.buttonLogin}}</button>              
+            </view>
+        </view>
+    </view>
+</template>
+
+<script>
+    import wepy from '@wepy/core';
+    import store from '@/store';
+    import {
+        mapState,
+        mapActions
+    } from '@wepy/x';
+    wepy.page({
+        store,
+        data: {
+            userData: ''
+        },
+        computed: {
+            ...mapState(['staticUpdate', '$i18n'])
+        },
+        methods: {      
+            onChangeLang() {
+                if (this.$i18n.lang === 'en') {
+                    this.$store.dispatch('changeLang', 'zh-cn');
+                } else {
+                    this.$store.dispatch('changeLang', 'en');
+                }
+            },
+            onLoginTap() {
+                wepy.wx.navigateTo({
+                    url: '/pages/index/index'
+                });
+            }
+        }
+    });
+</script>
+ <config>
+ {
+    navigationBarTitleText: 'Infun 登录',
+     usingComponents: {       
+      
+    }
+}
+</config>

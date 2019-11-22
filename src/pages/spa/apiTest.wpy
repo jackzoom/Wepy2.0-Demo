@@ -1,0 +1,56 @@
+/**
+ * @Name：接口测试
+ * @Path：/pages/spa/apiTest
+ * @Create: 2019-11-22
+ * @Author: jackzoom
+ */
+<style lang="less">
+
+</style>
+<template>
+    <view class="container">
+        <button @tap="onPayTest">支付</button>
+    </view>
+</template>
+
+<script>
+    import wepy from '@wepy/core';
+    import utils from '@/utils'
+    wepy.page({
+        data: {
+            userData: ''
+        },
+        methods: {
+            onPayTest() {
+                wx.request({
+                    url: 'https://zhuanyoyo.95cfun.cn/front/pay/request',
+                    success: function(res) {
+                        let dds = res.data.data;
+                        dds = {
+                            timeStamp: '1574411069',
+                            package: 'prepay_id=15822248965c91f20e57c6aae0f9ef1a9',
+                            paySign: '2F03031321DCE99C527DD3A0B8033B39',
+                            signType: 'MD5',
+                            nonceStr: '34192034008703625214'
+                        }
+                        let params = utils.extend(dds, {
+                            success: function(res) {
+                                console.log('支付信息：', res);
+                            },
+                            fail: function(err) {
+                                console.log('支付信息Err：', err);
+                            }
+                        });
+                        console.log("参数：", params);
+                        wx.requestPayment(params);
+                    }
+                })
+            }
+        }
+    });
+</script>
+ <config>
+ {
+    navigationBarTitleText: 'Api Test'
+}
+</config>

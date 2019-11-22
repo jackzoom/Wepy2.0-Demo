@@ -4,5 +4,8 @@
 export default {
   data: {
     staticTime: Math.random() * 100000
+  },
+  created(){
+    
   }
 }
